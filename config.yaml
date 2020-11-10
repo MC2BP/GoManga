@@ -1,0 +1,7 @@
+db:
+    port: "5432"
+    host: "localhost"
+    username: "user"
+    password: "secret"
+    database: "gomanga"
+    ssl: "disable"
