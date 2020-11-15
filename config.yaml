@@ -1,7 +1,12 @@
 db:
-    port: "5432"
-    host: "localhost"
-    username: "user"
-    password: "secret"
-    database: "gomanga"
-    ssl: "disable"
+  port: "5432"
+  host: "localhost"
+  username: "user"
+  password: "secret"
+  database: "gomanga"
+  ssl: "disable"
+source:
+  mangadex:
+    url: "https://mangadex.org/api/v2/"
+logToFile: false
+mangaFolder: /manga

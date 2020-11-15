@@ -1,20 +1,18 @@
 package db
 
 type Manga struct {
-	Id       int    `xorm:"int auto_increment 'id'"`
-	MangaId  int    `xorm:"int 'mangaid'"`
-	Source   string `xorm:"varchar not null 'source'"`
-	Author   string `xorm:"varchar not null 'author'"`
-	Artist   string `xorm:"varchar not null 'artist'"`
-	Language string `xorm:"varchar not null 'language'"`
+	Id          int64  `xorm:"serial 'id'"`
+	MangaId     int    `xorm:"int 'mangaid'"`
+	Name        string `xorm:"varchar not null 'name'"`
+	Description string `xorm:"varchar not null 'description'"`
+	Source      string `xorm:"varchar not null 'source'"`
+	Language    string `xorm:"varchar not null 'language'"`
 }
 
 type Chapter struct {
-	Id    int    `xorm:"int auto_increment 'id'"`
-	Name  string `xorm:"varchar 'name'"`
-	Read  bool   `xorm:"bit 'read'"`
-	Manga `xorm:"extends"`
-}
-
-type TLGroup struct {
+	Id      int64  `xorm:"serial 'id'"`
+	Name    string `xorm:"varchar 'name'"`
+	Read    bool   `xorm:"bit 'read'"`
+	MangaId int64  `xorm:"index"`
+	TlGroup string `xorm:"varchar 'tlgroup'"`
 }
